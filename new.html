@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Tournament 2025</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your external CSS -->
+    <script src="script.js"></script> <!-- Link to your external JavaScript if needed -->
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="/Users/swethaks/Documents/webpage/image.jpeg" alt="Tournament Logo">
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Banner -->
+    <section id="home">
+        <div class="banner">
+            <h1>Cricket Tournament 2025</h1>
+            <p>Get ready for the biggest cricket event of the year!</p>
+            <p><strong>Start Date:</strong> March 15, 2025</p>
+            <div id="countdown"></div>
+        </div>
+    </section>
+
+    <!-- About Tournament -->
+    <section id="about">
+        <div class="container">
+            <h2>About the Tournament</h2>
+            <p>Welcome to the Cricket Tournament 2025! The tournament will feature top cricket teams from around the world. Stay tuned for exciting matches!</p>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="schedule">
+        <div class="container">
+            <h2>Match Schedule</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Match</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Venue</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Team A vs Team B</td>
+                        <td>March 15, 2025</td>
+                        <td>10:00 AM</td>
+                        <td>Stadium 1</td>
+                    </tr>
+                    <tr>
+                        <td>Team C vs Team D</td>
+                        <td>March 16, 2025</td>
+                        <td>2:00 PM</td>
+                        <td>Stadium 2</td>
+                    </tr>
+                    <!-- Add more match rows as needed -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Teams Section -->
+    <section id="teams">
+        <div class="container">
+            <h2>Participating Teams</h2>
+            <ul>
+                <li>Team A</li>
+                <li>Team B</li>
+                <li>Team C</li>
+                <li>Team D</li>
+                <!-- Add more teams as needed -->
+            </ul>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news">
+        <div class="container">
+            <h2>Latest News</h2>
+            <ul>
+                <li><a href="#">Match Preview: Team A vs Team B</a></li>
+                <li><a href="#">Player of the Year Nominees</a></li>
+                <li><a href="#">Tournament Schedule Update</a></li>
+                <!-- Add more news articles -->
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Email: contact@crickettournament.com</p>
+            <p>Phone: +123 456 7890</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Cricket Tournament. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Countdown Script (example) -->
+    <script>
+        const countdown = document.getElementById("countdown");
+        const eventDate = new Date("March 15, 2025 10:00:00").getTime();
+
+        const interval = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+            if (distance < 0) {
+                clearInterval(interval);
+                countdown.innerHTML = "Tournament Started!";
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
